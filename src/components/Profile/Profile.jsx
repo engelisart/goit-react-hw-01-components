@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 export const Profile = ({username,tag,location,avatar,stats}) => {
     return <div className={clsx(css.profile)}>
-    <div className="description">
+    <div className={clsx(css.description)}>
       <img
         src={avatar}
         alt="User avatar"
