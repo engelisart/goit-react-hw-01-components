@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import React from 'react';
+// import React from 'react';
 
-const TransactionHistoryTable = styled.table`
+export const TransactionHistoryTable = styled.table`
   margin: auto;
   -webkit-box-shadow: 0px 0px 15px -9px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 0px 15px -9px rgba(66, 68, 90, 1);
   box-shadow: 0px 0px 15px -9px rgba(66, 68, 90, 1);
   border-radius: 5px;
 `;
-const TitleTh = styled.th`
+export const TitleTh = styled.th`
   width: 250px;
   height: 40px;
   background-color: #0ab0b5;
@@ -18,7 +18,7 @@ const TitleTh = styled.th`
   text-transform: uppercase;
   color: white;
 `;
-const CurrencyTd = styled.td`
+export const CurrencyTd = styled.td`
   height: 40px;
 
   font-size: 13px;
@@ -27,27 +27,3 @@ const CurrencyTd = styled.td`
   color: #969595;
   background-color: ${props => (props.$index % 2 === 0 ? 'white' : '#DEEAF0')};
 `;
-
-export const TransactionHistory = ({ items }) => {
-  return (
-    <TransactionHistoryTable>
-      <thead>
-        <tr>
-          <TitleTh>Type</TitleTh>
-          <TitleTh>Amount</TitleTh>
-          <TitleTh>Currency</TitleTh>
-        </tr>
-      </thead>
-
-      <tbody>
-        {items.map((item, index) => (
-          <tr key={item.id}>
-            <CurrencyTd $index={index}>{item.type}</CurrencyTd>
-            <CurrencyTd $index={index}>{item.amount}</CurrencyTd>
-            <CurrencyTd $index={index}>{item.currency}</CurrencyTd>
-          </tr>
-        ))}
-      </tbody>
-    </TransactionHistoryTable>
-  );
-};

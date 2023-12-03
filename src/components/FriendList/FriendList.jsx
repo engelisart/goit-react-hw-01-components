@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FriendListItem from '../FriendListItem/FriendListItem.styled';
+import FriendListItem from '../FriendListItem/FriendListItem';
 
 const FriendListContainer = styled.ul`
   display: flex;
