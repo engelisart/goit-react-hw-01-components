@@ -13,7 +13,14 @@ const FriendListContainer = styled.ul`
 export const FriendList = ({ friends }) => {
   return (
     <FriendListContainer>
-      {friends.map(friend => FriendListItem({ friend }))}
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <FriendListItem
+          key={id}
+          isOnline={isOnline}
+          avatar={avatar}
+          name={name}
+        />
+      ))}
     </FriendListContainer>
   );
 };

@@ -5,14 +5,14 @@ import {
   FriendListItemName,
 } from '../FriendListItem/FriendListItem.styled';
 
-export default function FriendListItem({ friend }) {
+export default function FriendListItem({ id, isOnline, avatar, name }) {
   return (
-    <FriendListItemContainer key={friend.id}>
+    <FriendListItemContainer key={id}>
       <FriendListItemStatus
-        $status={friend.isOnline.toString()}
+        $status={isOnline.toString()}
       ></FriendListItemStatus>
-      <FriendListItemImage src={friend.avatar} alt="User Avatar" width="48" />
-      <FriendListItemName>{friend.name}</FriendListItemName>
+      <FriendListItemImage src={avatar} alt="User Avatar" width="48" />
+      <FriendListItemName>{name}</FriendListItemName>
     </FriendListItemContainer>
   );
 }
